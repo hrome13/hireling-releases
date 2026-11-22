@@ -1,0 +1,43 @@
+name: Bug report
+description: Something in Hireling doesn't work the way it should.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. If Hireling still opens, "Send feedback or report a bug" at the bottom of its sidebar fills most of this in for you.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Hireling version
+      description: At the bottom of Settings.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: System
+      options:
+        - Windows
+        - Mac (Apple Silicon)
+        - Mac (Intel)
+    validations:
+      required: true
+  - type: input
+    id: addon
+    attributes:
+      label: Which addon, if it's about one
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Screenshots, error text, or whether it happens every time.

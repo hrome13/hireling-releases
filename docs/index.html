@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hireling, an addon manager for ESO</title>
+  <meta name="description" content="Hireling installs and updates your ESO addons from ESOUI, can roll back an update, lets you change addon settings without logging in, and keeps two computers in sync. Free, for Windows and Mac.">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:title" content="Hireling, an addon manager for ESO">
+  <meta property="og:description" content="Installs and updates your ESO addons, can roll back an update, and keeps your addon settings the same on two computers. Free, for Windows and Mac.">
+  <meta property="og:image" content="img/installed-dark.webp">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="./">
+        <svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 21 7v10l-9 5-9-5V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 7v8m-3.5-3.5L12 15l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Hireling
+      </a>
+      <nav class="top-nav">
+        <a href="#tour">Features</a>
+        <a href="#sync">Two computers</a>
+        <a href="#faq">FAQ</a>
+        <a class="button small" href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="kicker">An addon manager for The Elder Scrolls Online</p>
+          <h1>Update every addon in one go, and undo it if something breaks.</h1>
+          <p class="lead">Hireling installs and updates your addons from ESOUI, gets the libraries they need, and keeps the old version so you can roll an update back. It also lets you change addon settings without logging in, and keeps two computers in sync.</p>
+          <div class="get">
+            <a class="button big" id="get-main" href="#download">Download Hireling</a>
+            <span class="get-other" id="get-other">Free, for Windows and Mac</span>
+          </div>
+          <p class="meta" id="get-meta">About 4 MB on Windows. No account to make.</p>
+        </div>
+        <figure class="hero-shot">
+          <picture>
+            <source srcset="img/installed-light.webp" media="(prefers-color-scheme: light)">
+            <img src="img/installed-dark.webp" width="1280" height="800" alt="Hireling's Installed addons page, with ten updates and two missing libraries ready to install">
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <section id="tour" class="tour-section">
+      <div class="wrap">
+        <h2>A look around</h2>
+        <p class="section-lead">Pick a page to see it. These are the real screens, with made-up characters and guilds.</p>
+        <div class="tour" id="tour-box">
+          <article class="stop" data-shot="updating">
+            <button class="stop-head" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="4" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="4" y="13" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              Updating
+            </button>
+            <div class="stop-body">
+              <p><b>Update &amp; install all</b> updates everything that's out of date and installs any library an addon is missing. You can also let it update on its own and keep a few addons for updating by hand.</p>
+              <p>The old version is kept, with its saved settings. If an update breaks something, roll it back from the addon's page, and Hireling leaves that addon alone until the author puts out a newer version.</p>
+              <p><b>Update, then play</b> updates your addons, refreshes your price data and starts ESO, through Steam or the launcher. Afterwards, <b>What's new</b> shows what each author says changed.</p>
+            </div>
+            <figure><picture><source srcset="img/whatsnew-light.webp" media="(prefers-color-scheme: light)"><img src="img/whatsnew-dark.webp" loading="lazy" width="1280" height="800" alt="What's new: recent updates with what each author says changed"></picture></figure>
+          </article>
+
+          <article class="stop" data-shot="patch">
+            <button class="stop-head" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m10 12 1.5 1.5L14.5 10.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Patch day
+            </button>
+            <div class="stop-body">
+              <p>After a game update, the in-game list marks a lot of addons out of date, which doesn't tell you much. Hireling splits them into the ones with a fix already on ESOUI, the ones only marked out of date that still work fine, and the ones actually throwing errors.</p>
+              <p>An error can go straight to the addon's author from the Errors page.</p>
+            </div>
+            <figure><picture><source srcset="img/patch-light.webp" media="(prefers-color-scheme: light)"><img src="img/patch-dark.webp" loading="lazy" width="1280" height="800" alt="Patch day: addons with a fix ready on ESOUI, and ones only marked out of date"></picture></figure>
+          </article>
+
+          <article class="stop" data-shot="editor">
+            <button class="stop-head" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              Addon settings
+            </button>
+            <div class="stop-body">
+              <p>Change any addon's settings with the game closed. One search box covers every addon, so "minimap" finds the minimap settings wherever they are. Settings show the names from the addon's own menu, and where the addon says what the default is, you can reset to it.</p>
+              <p>A snapshot is taken before anything is saved. Settings can also be copied to another character or account, or over to the PTS or the other megaserver.</p>
+            </div>
+            <figure><picture><source srcset="img/editor-light.webp" media="(prefers-color-scheme: light)"><img src="img/editor-dark.webp" loading="lazy" width="1280" height="800" alt="Searching every addon's settings for minimap"></picture></figure>
+          </article>
+
+          <article class="stop" data-shot="loading">
+            <button class="stop-head" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="m12 17 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Loading screens
+            </button>
+            <div class="stop-body">
+              <p>Hireling reads how long each addon takes to start, from the log LibDebugLogger already keeps, and shows which ones add the most to every loading screen, along with how much saved data the game reads each time.</p>
+            </div>
+            <figure><picture><source srcset="img/loading-light.webp" media="(prefers-color-scheme: light)"><img src="img/loading-dark.webp" loading="lazy" width="1280" height="800" alt="Loading screens: the slowest addons to start"></picture></figure>
+          </article>
+
+          <article class="stop" data-shot="dues">
+            <button class="stop-head" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M7.5 14.5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Guild dues
+            </button>
+            <div class="stop-body">
+              <p>For trading guilds: how much you've sold in each guild this week, how far you are from its weekly goal, and a warning before the week ends if you're short. Officers can see the whole guild's week.</p>
+              <p>There's also price search with Tamriel Trade Centre data, a watchlist, and your sales history from Master Merchant.</p>
+              <p class="needs">Uses what LibHistoire and Master Merchant save.</p>
+            </div>
+            <figure><picture><source srcset="img/dues-light.webp" media="(prefers-color-scheme: light)"><img src="img/dues-dark.webp" loading="lazy" width="1280" height="800" alt="Guild dues: progress toward each guild's weekly goal"></picture></figure>
+          </article>
+
+          <article class="stop" data-shot="characters">
+            <button class="stop-head" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.6-3.3 2.8-5.2 5.5-5.2s4.9 1.9 5.5 5.2M16 5.5a3 3 0 0 1 0 5.6M17.5 14.2c1.7.7 2.7 2.4 3 4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Characters
+            </button>
+            <div class="stop-body">
+              <p>Gold, bag space, riding lessons and research for every character on one page, with a notification when research or a riding lesson finishes. You can search every character's bags and bank for an item, too.</p>
+              <p class="needs">Uses what CraftStore and Inventory Insight save.</p>
+            </div>
+            <figure><picture><source srcset="img/characters-light.webp" media="(prefers-color-scheme: light)"><img src="img/characters-dark.webp" loading="lazy" width="1280" height="800" alt="Characters: gold, bags, riding and research"></picture></figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sync" class="band">
+      <div class="wrap sync-grid">
+        <div>
+          <h2>Playing on two computers</h2>
+          <p>Point Hireling at a cloud folder you already use, like OneDrive, Dropbox, iCloud Drive or Google Drive, on each computer. From then on it keeps them in sync by itself, timed around when you play so the game never overwrites what it just wrote.</p>
+          <p>It merges individual settings, not whole files. Move your minimap on the desktop and change your chat colours on the laptop, and both end up with both changes.</p>
+          <p class="quiet">Nothing goes through a server of ours. It's just files in your own folder.</p>
+        </div>
+        <div class="sync-list">
+          <h3>What it keeps in sync</h3>
+          <ul>
+            <li>Addon settings, for every character and account</li>
+            <li>Your notes on addons</li>
+            <li>Guild sales history, so guild dues are up to date on both</li>
+            <li>A daily backup of your settings, kept off the computer in case a drive dies</li>
+          </ul>
+          <p class="quiet">Windows and Mac can sync with each other.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="more">
+      <div class="wrap">
+        <h2>Also in there</h2>
+        <div class="more-grid">
+          <div class="more-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div><h3>Companion apps</h3><p>The TTC client, ESO-Hub and ESO Logs can start with the game and close a few minutes after you quit.</p></div>
+          </div>
+          <div class="more-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div><h3>Ctrl+K</h3><p>Jump to any page, addon, setting or item by typing a few letters.</p></div>
+          </div>
+          <div class="more-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 9v4l3 2M9 2h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <div><h3>Daily snapshots</h3><p>A copy of all your addon settings each day, kept for as long as you choose. Put back just the files you need.</p></div>
+          </div>
+          <div class="more-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="12" r="3" fill="currentColor"/></svg>
+            <div><h3>Profiles</h3><p>Save which addons are on for a character, like a raid setup, and switch with one click.</p></div>
+          </div>
+          <div class="more-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="6" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="18" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8.3 10.8 7.4-3.6M8.3 13.2l7.4 3.6" stroke="currentColor" stroke-width="1.8"/></svg>
+            <div><h3>Share your setup</h3><p>Send a friend your addon list as a short code, and they can install the lot.</p></div>
+          </div>
+          <div class="more-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><h3>Health check</h3><p>Spots addons known to clash with each other, and libraries nothing uses any more.</p></div>
+          </div>
+          <div class="more-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 6v12c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V6M5 12c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            <div><h3>Saved data</h3><p>See how much each addon saves, and trim LibGuildStore's sales history if it's slowing your loading screens.</p></div>
+          </div>
+          <div class="more-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0-4.5 4.5M12 4l4.5 4.5M4 15v4h16v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><h3>For addon authors</h3><p>Publish your own addon to ESOUI from Hireling. Folders you've linked in for development are never touched.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="band download">
+      <div class="wrap">
+        <h2>Download</h2>
+        <p class="section-lead">Free. Once it's installed, Hireling keeps itself up to date.</p>
+        <div class="dl-grid">
+          <div class="dl" id="dl-win">
+            <div class="dl-head">
+              <h3>Windows</h3>
+              <span class="quiet">Windows 10 or 11, about 4 MB</span>
+            </div>
+            <a class="button big" href="https://github.com/hrome13/hireling-releases/releases/latest/download/Hireling-Windows-setup.exe">Download for Windows</a>
+            <p class="first-run"><b>The first time:</b> Windows may say "Windows protected your PC", because Hireling is new and isn't signed with a paid certificate yet. Click <b>More info</b>, then <b>Run anyway</b>. It installs just for you, so it won't ask for an admin password.</p>
+          </div>
+          <div class="dl" id="dl-mac">
+            <div class="dl-head">
+              <h3>Mac</h3>
+              <span class="quiet">macOS 11 or newer, Apple silicon or Intel</span>
+            </div>
+            <a class="button big" href="https://github.com/hrome13/hireling-releases/releases/latest/download/Hireling-Mac.dmg">Download for Mac</a>
+            <p class="first-run"><b>The first time:</b> drag Hireling into Applications. If macOS says it can't check the app, open <b>System Settings</b>, then <b>Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</p>
+          </div>
+        </div>
+        <p class="quiet">Older versions and release notes are on the <a href="https://github.com/hrome13/hireling-releases/releases">releases page</a>.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <h2>Questions</h2>
+        <div class="faq-grid">
+          <div>
+            <h3>I use Minion. Do I have to start over?</h3>
+            <p>No. Hireling finds the addons you already have and reads Minion's own records to match them to ESOUI, so updates work straight away. You can keep Minion installed while you try it.</p>
+          </div>
+          <div>
+            <h3>Could it mess up my addons?</h3>
+            <p>Every update and removal keeps a backup with the addon's saved settings, and you can roll back from the addon's page. Settings are only changed while the game is closed, after a snapshot. The game's own files are left alone.</p>
+          </div>
+          <div>
+            <h3>What does it send, and where?</h3>
+            <p>There are no accounts, analytics or tracking. It talks to ESOUI for the addon list and downloads, to GitHub to check for a new version of itself, and to Tamriel Trade Centre for its public price table if you use price search. Sync only goes through your own cloud folder.</p>
+          </div>
+          <div>
+            <h3>Does it work with the Steam version?</h3>
+            <p>Yes. It finds your AddOns folder whether you play through Steam or the ZeniMax launcher, and Update, then play starts the game the way you normally do.</p>
+          </div>
+          <div>
+            <h3>Is it really free?</h3>
+            <p>Yes. There's no paid version, no ads and nothing to sign up for.</p>
+          </div>
+          <div>
+            <h3>Found a bug, or have an idea?</h3>
+            <p>Use <b>Send feedback or report a bug</b> at the bottom of Hireling's sidebar, which can include the details that help, or <a href="https://github.com/hrome13/hireling-releases/issues/new/choose">open an issue on GitHub</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-row">
+      <span class="brand small">
+        <svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 21 7v10l-9 5-9-5V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 7v8m-3.5-3.5L12 15l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Hireling
+      </span>
+      <p>Not made by or affiliated with ZeniMax Online Studios or ESOUI. The Elder Scrolls Online is a trademark of ZeniMax Media.</p>
+      <a href="https://github.com/hrome13/hireling-releases/issues/new/choose">Report a bug</a>
+    </div>
+  </footer>
+
+  <dialog id="zoom" aria-label="Screenshot">
+    <img id="zoom-img" alt="">
+  </dialog>
+
+  <script>
+    // Click a screenshot to see it bigger; click again or press Esc to close.
+    var dlg = document.getElementById("zoom");
+    var zimg = document.getElementById("zoom-img");
+    function hookZoom(root) {
+      if (!dlg.showModal) return;
+      root.querySelectorAll("img").forEach(function (s) {
+        s.addEventListener("click", function () {
+          zimg.src = s.currentSrc || s.src;
+          zimg.alt = s.alt;
+          dlg.showModal();
+        });
+      });
+    }
+    hookZoom(document.querySelector(".hero-shot"));
+    document.querySelectorAll(".stop figure").forEach(hookZoom);
+    dlg.addEventListener("click", function () { dlg.close(); });
+
+    // The hero's Download button goes straight to this computer's version.
+    (function () {
+      var p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "").toLowerCase();
+      var mac = p.indexOf("mac") >= 0;
+      var win = p.indexOf("win") >= 0;
+      if (!mac && !win) return;
+      var main = document.getElementById("get-main");
+      main.href = document.querySelector((mac ? "#dl-mac" : "#dl-win") + " a.button").href;
+      main.textContent = mac ? "Download for Mac" : "Download for Windows";
+      document.getElementById("get-other").innerHTML = 'Also for <a href="#download">' + (mac ? "Windows" : "Mac") + "</a>";
+      document.getElementById("get-meta").textContent = mac ? "macOS 11 or newer. No account to make." : "About 4 MB, Windows 10 or 11. No account to make.";
+    })();
+
+    // The tour: on wide screens, one list of pages on the left and the
+    // picked page's screenshot on the right. Without this script (or on a
+    // phone) every page just shows its own screenshot under its text.
+    (function () {
+      var box = document.getElementById("tour-box");
+      var stops = Array.prototype.slice.call(box.querySelectorAll(".stop"));
+      var viewer = document.createElement("div");
+      viewer.className = "tour-viewer";
+      box.appendChild(viewer);
+      box.classList.add("js");
+      function pick(i) {
+        stops.forEach(function (s, j) {
+          s.classList.toggle("on", i === j);
+          s.querySelector(".stop-head").setAttribute("aria-expanded", i === j ? "true" : "false");
+        });
+        var fig = stops[i].querySelector("figure").cloneNode(true);
+        fig.querySelectorAll("img").forEach(function (im) { im.loading = "eager"; });
+        viewer.replaceChildren(fig);
+        hookZoom(fig);
+      }
+      stops.forEach(function (s, i) {
+        s.querySelector(".stop-head").addEventListener("click", function () { pick(i); });
+      });
+      pick(0);
+    })();
+  </script>
+</body>
+</html>

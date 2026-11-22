@@ -1,0 +1,20 @@
+name: Idea or request
+description: Something Hireling could do, or do better.
+title: "Idea: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+      description: What you're trying to do, and what would make it easier.
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: System
+      options:
+        - Windows
+        - Mac
+        - Both / doesn't matter
