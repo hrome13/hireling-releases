@@ -326,9 +326,11 @@
         return t;
       });
       viewer.append(shot, text);
-      box.appendChild(viewer);
-      // The list's rows stay their own height; the last row takes up the rest.
-      box.style.gridTemplateRows = "repeat(" + stops.length + ", auto) 1fr";
+      // The page list in its own box, so it can stay in view while you scroll.
+      var list = document.createElement("div");
+      list.className = "tour-list";
+      stops.forEach(function (s) { list.appendChild(s); });
+      box.append(list, viewer);
       box.classList.add("js");
       function pick(i) {
         stops.forEach(function (s, j) {
