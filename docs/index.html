@@ -38,7 +38,7 @@
           <p class="lead">Hireling installs and updates your addons from ESOUI, gets the libraries they need, and keeps the old version so you can roll an update back. It also lets you change addon settings without logging in, and keeps two computers in sync.</p>
           <div class="get">
             <a class="button big" id="get-main" href="#download">Download Hireling</a>
-            <span class="get-other" id="get-other">Free, for Windows and Mac</span>
+            <span class="get-other" id="get-other">Free, for Windows. Mac coming soon.</span>
           </div>
           <p class="meta" id="get-meta">About 4 MB on Windows. No account to make.</p>
         </div>
@@ -211,8 +211,12 @@
               <h3>Mac</h3>
               <span class="quiet">macOS 11 or newer, Apple silicon or Intel</span>
             </div>
+            <!-- When Hireling-Mac.dmg is on the latest release, put these back in place of the two lines below:
             <a class="button big" href="https://github.com/hrome13/hireling-releases/releases/latest/download/Hireling-Mac.dmg">Download for Mac</a>
             <p class="first-run"><b>The first time:</b> drag Hireling into Applications. If macOS says it can't check the app, open <b>System Settings</b>, then <b>Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</p>
+            -->
+            <span class="button big soon" aria-disabled="true">Mac version coming soon</span>
+            <p class="first-run">The Mac version is still being finished. Once it's out, it'll be on the <a href="https://github.com/hrome13/hireling-releases/releases">releases page</a> and here.</p>
           </div>
         </div>
         <p class="quiet">Older versions and release notes are on the <a href="https://github.com/hrome13/hireling-releases/releases">releases page</a>.</p>
@@ -291,10 +295,14 @@
       var mac = p.indexOf("mac") >= 0;
       var win = p.indexOf("win") >= 0;
       if (!mac && !win) return;
+      var link = document.querySelector((mac ? "#dl-mac" : "#dl-win") + " a.button");
+      // No Mac build yet: a Mac visitor keeps the plain button to the download section.
+      if (!link) return;
       var main = document.getElementById("get-main");
-      main.href = document.querySelector((mac ? "#dl-mac" : "#dl-win") + " a.button").href;
+      main.href = link.href;
       main.textContent = mac ? "Download for Mac" : "Download for Windows";
-      document.getElementById("get-other").innerHTML = 'Also for <a href="#download">' + (mac ? "Windows" : "Mac") + "</a>";
+      var macOut = !!document.querySelector("#dl-mac a.button");
+      document.getElementById("get-other").innerHTML = macOut || mac ? 'Also for <a href="#download">' + (mac ? "Windows" : "Mac") + "</a>" : "Mac coming soon";
       document.getElementById("get-meta").textContent = mac ? "macOS 11 or newer. No account to make." : "About 4 MB, Windows 10 or 11. No account to make.";
     })();
 

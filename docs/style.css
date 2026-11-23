@@ -79,6 +79,7 @@ p { margin: 0 0 .9em; }
 .button:hover { filter: brightness(1.07); }
 .button.big { padding: 12px 22px; font-size: 1.02rem; }
 .button.small { padding: 6px 14px; font-size: .92rem; }
+.button.soon { background: transparent; color: var(--muted); border-color: var(--line); cursor: default; filter: none; }
 
 /* Header */
 .top { border-bottom: 1px solid var(--line); }
