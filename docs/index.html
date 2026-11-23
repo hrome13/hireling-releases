@@ -307,23 +307,38 @@
     })();
 
     // The tour: on wide screens, one list of pages on the left and the
-    // picked page's screenshot on the right. Without this script (or on a
-    // phone) every page just shows its own screenshot under its text.
+    // picked page's screenshot on the right, with its text under it. Without
+    // this script (or on a phone) every page just shows its own screenshot
+    // under its text.
     (function () {
       var box = document.getElementById("tour-box");
       var stops = Array.prototype.slice.call(box.querySelectorAll(".stop"));
       var viewer = document.createElement("div");
       viewer.className = "tour-viewer";
+      var shot = document.createElement("div");
+      // Every page's text sits in the same spot, so the box is always as tall
+      // as the longest one and nothing below moves when you switch pages.
+      var text = document.createElement("div");
+      text.className = "tour-text";
+      var texts = stops.map(function (s) {
+        var t = s.querySelector(".stop-body").cloneNode(true);
+        text.appendChild(t);
+        return t;
+      });
+      viewer.append(shot, text);
       box.appendChild(viewer);
+      // The list's rows stay their own height; the last row takes up the rest.
+      box.style.gridTemplateRows = "repeat(" + stops.length + ", auto) 1fr";
       box.classList.add("js");
       function pick(i) {
         stops.forEach(function (s, j) {
           s.classList.toggle("on", i === j);
+          texts[j].classList.toggle("on", i === j);
           s.querySelector(".stop-head").setAttribute("aria-expanded", i === j ? "true" : "false");
         });
         var fig = stops[i].querySelector("figure").cloneNode(true);
         fig.querySelectorAll("img").forEach(function (im) { im.loading = "eager"; });
-        viewer.replaceChildren(fig);
+        shot.replaceChildren(fig);
         hookZoom(fig);
       }
       stops.forEach(function (s, i) {
