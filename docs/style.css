@@ -124,7 +124,7 @@ h1 { font-size: clamp(2rem, 3.6vw, 2.9rem); letter-spacing: -0.02em; line-height
   .tour.js .stop.on .stop-head { background: var(--accent-soft); }
   .tour.js .stop.on .stop-head { color: var(--accent); }
   .tour.js .stop.on .stop-head svg { color: var(--accent); }
-  .tour.js .stop-body { display: none; padding: 0 16px 6px 44px; font-size: .95rem; }
+  .tour.js .stop-body { display: none; padding: 14px 16px 6px 44px; font-size: .95rem; }
   .tour.js .stop.on .stop-body { display: block; }
   .tour-viewer { grid-column: 2; grid-row: 1 / span 6; position: sticky; top: 24px; }
   .tour-viewer figure { margin: 0; }
