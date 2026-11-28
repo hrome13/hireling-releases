@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hireling, an addon manager for ESO</title>
-  <meta name="description" content="Hireling installs and updates your ESO addons from ESOUI, can roll back an update, lets you change addon settings without logging in, and keeps two computers in sync. Free, for Windows and Mac.">
+  <meta name="description" content="Hireling installs and updates your ESO addons from ESOUI, can roll back an update, lets you change addon settings without logging in, and keeps two computers in sync. Free, for Windows, Mac, Steam Deck and Steam Machine.">
   <meta name="color-scheme" content="dark light">
   <meta property="og:title" content="Hireling, an addon manager for ESO">
-  <meta property="og:description" content="Installs and updates your ESO addons, can roll back an update, and keeps your addon settings the same on two computers. Free, for Windows and Mac.">
+  <meta property="og:description" content="Installs and updates your ESO addons, can roll back an update, and keeps your addon settings the same on two computers. Free, for Windows, Mac, Steam Deck and Steam Machine.">
   <meta property="og:image" content="img/installed-dark.webp">
   <link rel="icon" href="img/icon.png">
   <link rel="stylesheet" href="fonts/fonts.css">
@@ -23,6 +23,7 @@
       <nav class="top-nav">
         <a href="#tour">Features</a>
         <a href="#sync">Two computers</a>
+        <a href="#compare">Compare</a>
         <a href="#faq">FAQ</a>
         <a class="button small" href="#download">Download</a>
       </nav>
@@ -38,7 +39,7 @@
           <p class="lead">Hireling installs and updates your addons from ESOUI, gets the libraries they need, and keeps the old version so you can roll an update back. It also lets you change addon settings without logging in, and keeps two computers in sync.</p>
           <div class="get">
             <a class="button big" id="get-main" href="#download">Download Hireling</a>
-            <span class="get-other" id="get-other">Free, for Windows and Mac</span>
+            <span class="get-other" id="get-other">Free, for Windows, Mac and SteamOS</span>
           </div>
           <p class="meta" id="get-meta">About 4 MB on Windows. No account to make.</p>
         </div>
@@ -148,7 +149,7 @@
             <li>Guild sales history, so guild dues are up to date on both</li>
             <li>A daily backup of your settings, kept off the computer in case a drive dies</li>
           </ul>
-          <p class="quiet">Windows and Mac can sync with each other.</p>
+          <p class="quiet">Windows, Mac and SteamOS can all sync with each other.</p>
         </div>
       </div>
     </section>
@@ -193,6 +194,58 @@
       </div>
     </section>
 
+    <section id="compare" class="compare">
+      <div class="wrap">
+        <h2>How it compares</h2>
+        <p class="section-lead">What the addon managers people use for ESO can do, as of November 2026. Each cell comes from that app's own pages, changelog or code. A dash means we couldn't find it there, not that it's definitely missing. If something here is wrong, <a href="https://github.com/hrome13/hireling-releases/issues/new/choose">tell us</a> and we'll fix it.</p>
+        <div class="cmp-scroll" tabindex="0" role="region" aria-label="Comparison table, scrolls sideways">
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr">Feature</span></th>
+                <th scope="col" class="us">Hireling<span>1.0</span></th>
+                <th scope="col"><a href="https://sir.insidi.at/or/vault/minion-4-open-beta/">Minion 4</a><span>4.2.1, open beta</span></th>
+                <th scope="col"><a href="https://minion.mmoui.com/">Minion 3</a><span>3.0.12, March 2024</span></th>
+                <th scope="col"><a href="https://github.com/arviceblot/eso-addons">ESO Addon Manager</a><span>0.4.23, July 2026</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="grp"><th colspan="5" scope="colgroup"><span>Where it runs</span></th></tr>
+              <tr><th scope="row">Windows</th><td class="us y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td></tr>
+              <tr><th scope="row">Mac</th><td class="us y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td></tr>
+              <tr><th scope="row">Linux</th><td class="us y">Yes</td><td class="y">Yes</td><td>Flatpak</td><td class="y">Yes</td></tr>
+              <tr><th scope="row">Finds your addons on a Steam Deck by itself</th><td class="us y">Yes</td><td class="n">—</td><td class="n">—</td><td>Suggests the folder</td></tr>
+
+              <tr class="grp"><th colspan="5" scope="colgroup"><span>Addons</span></th></tr>
+              <tr><th scope="row">Installs and updates addons from ESOUI</th><td class="us y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td></tr>
+              <tr><th scope="row">Installs missing libraries for you</th><td class="us y">Yes</td><td class="y">Yes</td><td class="n">—</td><td>Suggests them</td></tr>
+              <tr><th scope="row">Update everything with one button</th><td class="us y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td></tr>
+              <tr><th scope="row">Updates on its own in the background</th><td class="us y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td>Checks when opened</td></tr>
+              <tr><th scope="row">Roll back one addon to an earlier version</th><td class="us y">Yes</td><td>Restore a whole backup</td><td>Restore a whole backup</td><td class="n">—</td></tr>
+              <tr><th scope="row">Shows Lua errors from your last session</th><td class="us">With LibDebugLogger</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+              <tr><th scope="row">Leaves linked development folders alone</th><td class="us y">Yes</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+
+              <tr class="grp"><th colspan="5" scope="colgroup"><span>Addon settings (SavedVariables)</span></th></tr>
+              <tr><th scope="row">Backs them up</th><td class="us">Daily, and with every update</td><td>When you make a backup</td><td>When you make a backup</td><td>Addon list only</td></tr>
+              <tr><th scope="row">Change them with the game closed</th><td class="us y">Yes</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+              <tr><th scope="row">Keep two computers in sync</th><td class="us y">Yes</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+              <tr><th scope="row">Profiles of which addons are on, per character</th><td class="us y">Yes</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+
+              <tr class="grp"><th colspan="5" scope="colgroup"><span>Extras</span></th></tr>
+              <tr><th scope="row">Updates TTC price data</th><td class="us y">Yes</td><td class="n">—</td><td class="n">—</td><td>TTC and HarvestMap</td></tr>
+              <tr><th scope="row">Starts the game after updating</th><td class="us y">Yes</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+
+              <tr class="grp"><th colspan="5" scope="colgroup"><span>The app itself</span></th></tr>
+              <tr><th scope="row">Free, with no account</th><td class="us y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td></tr>
+              <tr><th scope="row">Open source</th><td class="us">Not yet</td><td class="n">—</td><td class="n">—</td><td>Yes, MIT</td></tr>
+              <tr><th scope="row">Built on</th><td class="us">Rust and the system's own web view</td><td>Java, bundled</td><td>Java, bundled</td><td>Rust (egui)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="quiet cmp-note">CurseForge also supports ESO, but only in its Overwolf app on Windows, and with its own catalog of 115 ESO addons rather than ESOUI's thousands. The Vortex extension for ESOUI hasn't had a release since January 2023.</p>
+      </div>
+    </section>
+
     <section id="download" class="band download">
       <div class="wrap">
         <h2>Download</h2>
@@ -213,6 +266,14 @@
             </div>
             <a class="button big" href="https://github.com/hrome13/hireling-releases/releases/latest/download/Hireling-Mac.dmg">Download for Mac</a>
             <p class="first-run"><b>The first time:</b> drag Hireling into Applications. If macOS says it can't check the app, open <b>System Settings</b>, then <b>Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</p>
+          </div>
+          <div class="dl" id="dl-linux">
+            <div class="dl-head">
+              <h3>Steam Deck and Steam Machine</h3>
+              <span class="quiet">SteamOS, or any other 64-bit Linux</span>
+            </div>
+            <a class="button big" href="https://github.com/hrome13/hireling-releases/releases/latest/download/Hireling-Linux.AppImage">Download for SteamOS</a>
+            <p class="first-run"><b>The first time:</b> in Desktop Mode, save it to your Home folder, right-click it, choose <b>Properties</b>, then <b>Permissions</b>, tick <b>Is executable</b>, and double-click it. To open it from Game Mode as well, add it in Steam with <b>Add a Non-Steam Game</b>.</p>
           </div>
         </div>
         <p class="quiet">Older versions and release notes are on the <a href="https://github.com/hrome13/hireling-releases/releases">releases page</a>.</p>
@@ -236,8 +297,8 @@
             <p>There are no accounts, analytics or tracking. It talks to ESOUI for the addon list and downloads, to GitHub to check for a new version of itself, and to Tamriel Trade Centre for its public price table if you use price search. Sync only goes through your own cloud folder.</p>
           </div>
           <div>
-            <h3>Does it work with the Steam version?</h3>
-            <p>Yes. It finds your AddOns folder whether you play through Steam or the ZeniMax launcher, and Update, then play starts the game the way you normally do.</p>
+            <h3>Does it work with Steam, and on a Steam Deck or Steam Machine?</h3>
+            <p>Yes. It finds your AddOns folder whether you play through Steam or the ZeniMax launcher, and Update, then play starts the game the way you normally do. On a Steam Deck or Steam Machine it finds the folder inside Steam's Proton files, on a microSD card too.</p>
           </div>
           <div>
             <h3>Is it really free?</h3>
@@ -288,18 +349,19 @@
     // The hero's Download button goes straight to this computer's version.
     (function () {
       var p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "").toLowerCase();
-      var mac = p.indexOf("mac") >= 0;
-      var win = p.indexOf("win") >= 0;
-      if (!mac && !win) return;
-      var link = document.querySelector((mac ? "#dl-mac" : "#dl-win") + " a.button");
-      // No Mac build yet: a Mac visitor keeps the plain button to the download section.
+      var ua = navigator.userAgent.toLowerCase();
+      var os = p.indexOf("mac") >= 0 ? "mac" : p.indexOf("win") >= 0 ? "win" : p.indexOf("linux") >= 0 && ua.indexOf("android") < 0 ? "linux" : "";
+      if (!os) return;
+      var names = { win: "Windows", mac: "Mac", linux: "SteamOS" };
+      var meta = { win: "About 4 MB, Windows 10 or 11. No account to make.", mac: "macOS 11 or newer. No account to make.", linux: "For Steam Deck, Steam Machine and other 64-bit Linux. No account to make." };
+      var link = document.querySelector("#dl-" + os + " a.button");
       if (!link) return;
       var main = document.getElementById("get-main");
       main.href = link.href;
-      main.textContent = mac ? "Download for Mac" : "Download for Windows";
-      var macOut = !!document.querySelector("#dl-mac a.button");
-      document.getElementById("get-other").innerHTML = macOut || mac ? 'Also for <a href="#download">' + (mac ? "Windows" : "Mac") + "</a>" : "Mac coming soon";
-      document.getElementById("get-meta").textContent = mac ? "macOS 11 or newer. No account to make." : "About 4 MB, Windows 10 or 11. No account to make.";
+      main.textContent = "Download for " + names[os];
+      var others = Object.keys(names).filter(function (k) { return k !== os; }).map(function (k) { return names[k]; });
+      document.getElementById("get-other").innerHTML = 'Also for <a href="#download">' + others.join(" and ") + "</a>";
+      document.getElementById("get-meta").textContent = meta[os];
     })();
 
     // The tour: on wide screens, one list of pages on the left and the
